@@ -2,10 +2,12 @@ const cardElements = document.getElementsByClassName('s-card');
 
 function handleMouseEnter(){
     this.classList.add('s-card--hovered');
+    document.body.id = `${this.id}-hovered`;
 }
 
 function handleMouseLeave() {
-    this.classList.remove('s-card--hovered')
+    this.classList.remove('s-card--hovered');
+    document.body.id="";
 }
 
 function addEventListernersToCards(){
