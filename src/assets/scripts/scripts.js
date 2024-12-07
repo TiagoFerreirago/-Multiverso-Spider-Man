@@ -22,5 +22,18 @@ function addEventListernersToCards(){
 document.addEventListener("DOMContentLoaded", addEventListernersToCards, false);
 
 function selectCarouselItem(selectedItem) {
-    
+    const item = selectedItem.id;
+    const carousel = document.querySelector('.s-cards-carousel');
+    const transform= carousel.style.transform;
+    console.log(transform)
+    const rotateY = transform.match(/rotateY\((-?\d+deg)\)/i);
+    const rotateYDeg = -120 * (Number(item) - 1);
+    console.log(rotateYDeg)
+    const newTransform = transform.replace(rotateY[0],`rotateY(${rotateYDeg}deg)`)
+
+    carousel.style.transform = newTransform;
+
+    const activeButton = document.querySelector('.s-controller__button--active');
+    activeButton.classList.remove('s-controller__button--active')
+    selectedItem.classList.add('s-controller__button--active');
 }
