@@ -51,6 +51,11 @@
     justify-content: flex-end;
 }
 
+.s-main-content__bottom .gallery ul li img{
+    width: 350px;
+    height: 200px;
+}
+
 .s-wrapper .s-main-content .s-logo img {
     margin-top: 50px;
     margin-left: 0;
