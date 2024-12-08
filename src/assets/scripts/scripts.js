@@ -25,10 +25,8 @@ function selectCarouselItem(selectedItem) {
     const item = selectedItem.id;
     const carousel = document.querySelector('.s-cards-carousel');
     const transform= carousel.style.transform;
-    console.log(transform)
     const rotateY = transform.match(/rotateY\((-?\d+deg)\)/i);
     const rotateYDeg = -120 * (Number(item) - 1);
-    console.log(rotateYDeg)
     const newTransform = transform.replace(rotateY[0],`rotateY(${rotateYDeg}deg)`)
 
     carousel.style.transform = newTransform;
